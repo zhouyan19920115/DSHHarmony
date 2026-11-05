@@ -1,0 +1,47 @@
+{
+  // 签名材料不进仓库。第一次用 DevEco Studio 打开本工程时, 按提示走
+  // Project Structure → Signing Configs → Automatically generate signature,
+  // DevEco 会在你自己的机器上生成一份 debug 签名, 并把这个数组填回来。
+  // 详见 README 的「构建前必读」。
+  "app": {
+    "signingConfigs": [],
+    "products": [
+      {
+        "name": "default",
+        // 上面生成好签名后, 把下面这行的注释放开(hvigor 认 json5 注释)
+        // "signingConfig": "default",
+        "targetSdkVersion": "26.0.0",
+        "compatibleSdkVersion": "26.0.0",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug"
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}
